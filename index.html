@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mico G. Aragon | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header">
+
+        <a href="#home" class="logo">
+            Mico<span>.</span>
+        </a>
+
+        <i class="bx bx-menu menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME -->
+    <section class="home" id="home">
+
+        <div class="home-image reveal-right">
+
+            <div class="image-frame">
+                <img
+                    src="images/image.png?v=2"
+                    alt="Mico G. Aragon"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
+
+        </div>
+
+        <div class="home-content reveal-left">
+
+            <p class="small-title">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>
+                Hi, I'm
+                <span>Mico G. Aragon</span>
+            </h1>
+
+            <p>
+                I'm a 2nd-year Bachelor of Industrial Technology
+                student with a passion for technology, web development,
+                and digital creativity. I enjoy creating websites,
+                learning new technologies, and turning simple ideas
+                into useful and meaningful projects.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="https://www.facebook.com/mico.aragon.52"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook"
+                   title="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+
+                <a href="https://www.instagram.com/itsmemik33/?hl=en"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram"
+                   title="Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+
+                <a href="https://t.me/MikeGabales"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Telegram"
+                   title="Telegram">
+                    <i class="bx bxl-telegram"></i>
+                </a>
+
+            </div>
+
+            <div class="home-buttons">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#projects" class="btn btn-outline">View Work</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MY PROJECTS -->
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+            <!-- PROJECT 1: FLEETTRACK -->
+            <div class="project-card"
+                 onclick="openProject(this)"
+                 role="button"
+                 tabindex="0"
+                 onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(this); }">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/fleettrack-dashboard.png"
+                        alt="Fleet and Vehicle Delivery Dashboard"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="project-info">
+
+                    <span class="project-category">
+                        CLASS PROJECT
+                    </span>
+
+                    <h3>Fleet &amp; Vehicle Delivery Dashboard</h3>
+
+                    <p>
+                        A fleet management dashboard designed to monitor
+                        vehicles, drivers, deliveries, and vehicle
+                        maintenance. It provides an overview of fleet
+                        operations, including vehicle information,
+                        assigned drivers, destinations, fuel levels,
+                        and delivery status.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Dashboard</span>
+                        <span>Fleet Management</span>
+                        <span>Web Development</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2: CAMPUS SHUTTLE & BUS MONITOR -->
+            <div class="project-card"
+                 onclick="openProject(this)"
+                 role="button"
+                 tabindex="0"
+                 onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(this); }">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/campus-shuttle-bus-monitor.png"
+                        alt="Campus Shuttle and Bus Monitor Dashboard"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="project-info">
+
+                    <span class="project-category">
+                        CLASS PROJECT
+                    </span>
+
+                    <h3>Campus Shuttle &amp; Bus Monitor</h3>
+
+                    <p>
+                        A web-based campus transportation monitoring
+                        system designed to display active school bus
+                        routes, bus numbers, current status, and
+                        estimated arrival times. It also provides
+                        upcoming stops and route alerts to help
+                        students monitor campus transportation.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Bus Monitoring</span>
+                        <span>Transportation</span>
+                        <span>Web Development</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT IMAGE POPUP -->
+    <div class="project-popup"
+         id="projectPopup"
+         onclick="closeProject()">
+
+        <button
+            type="button"
+            class="project-close"
+            onclick="closeProject()"
+            aria-label="Close popup">
+            &times;
+        </button>
+
+        <img
+            id="popupProjectImage"
+            src=""
+            alt="Project Preview"
+            onclick="event.stopPropagation()"
+        >
+
+    </div>
+
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="personal-skills">
+
+                <div class="personal-skill-card"
+                     onclick="showSkill('responsibility')"
+                     role="button"
+                     tabindex="0"
+                     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showSkill('responsibility'); }">
+
+                    <i class="bx bx-task"></i>
+                    <h3>Responsibility</h3>
+                    <p>Click to learn more</p>
+
+                </div>
+
+                <div class="personal-skill-card"
+                     onclick="showSkill('learning')"
+                     role="button"
+                     tabindex="0"
+                     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showSkill('learning'); }">
+
+                    <i class="bx bx-book-open"></i>
+                    <h3>Willingness to Learn</h3>
+                    <p>Click to learn more</p>
+
+                </div>
+
+                <div class="personal-skill-card"
+                     onclick="showSkill('motivation')"
+                     role="button"
+                     tabindex="0"
+                     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showSkill('motivation'); }">
+
+                    <i class="bx bx-target-lock"></i>
+                    <h3>Self-Motivation</h3>
+                    <p>Click to learn more</p>
+
+                </div>
+
+                <div class="personal-skill-card"
+                     onclick="showSkill('teamwork')"
+                     role="button"
+                     tabindex="0"
+                     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showSkill('teamwork'); }">
+
+                    <i class="bx bx-group"></i>
+                    <h3>Teamwork</h3>
+                    <p>Click to learn more</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILL EXPLANATION POPUP -->
+    <div class="skill-popup" id="skillPopup">
+
+        <div class="skill-popup-content">
+
+            <button
+                type="button"
+                class="close-popup"
+                onclick="closeSkill()"
+                aria-label="Close popup">
+                &times;
+            </button>
+
+            <i class="bx bx-star" id="popupIcon"></i>
+
+            <h2 id="popupTitle"></h2>
+
+            <p id="popupDescription"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's work together</h3>
+
+                <p>
+                    If you have a project, idea, or opportunity,
+                    feel free to contact me. I'm always interested
+                    in learning, creating, and working on new
+                    digital projects.
+                </p>
+
+                <div class="contact-details">
+
+                    <p>
+                        <i class="bx bx-envelope"></i>
+                        gabalesmike25@gmail.com
+                    </p>
+
+                    <p>
+                        <i class="bx bx-map"></i>
+                        Philippines
+                    </p>
+
+                    <p>
+                        <i class="bx bx-check-circle"></i>
+                        Open to opportunities
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form class="contact-form" id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026
+            <span>Mico G. Aragon</span>
+            . All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- EMAILJS LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- YOUR JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
